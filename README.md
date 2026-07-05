@@ -25,7 +25,6 @@ GETIS started as a client-side prototype (bookings saved to `localStorage`, a ha
 | Booking Form | CSV Export |
 |--------------|------------|
 | ![Booking form screenshot](docs/screenshots/booking-form.PNG) | ![CSV export screenshot](docs/screenshots/csv-export.PNG) |
-git add README.md
 
 ## Features
 
