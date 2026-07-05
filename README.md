@@ -25,10 +25,7 @@ GETIS started as a client-side prototype (bookings saved to `localStorage`, a ha
 | Booking Form | CSV Export |
 |--------------|------------|
 | ![Booking form screenshot](docs/screenshots/booking-form.PNG) | ![CSV export screenshot](docs/screenshots/csv-export.PNG) |
-
-> ⚠️ GitHub's file storage is case-sensitive. If you ever rename or re-save these
-> screenshots with a lowercase `.png` extension, update the paths above to match —
-> otherwise the images won't render on GitHub even though they work fine locally.
+git add README.md
 
 ## Features
 
