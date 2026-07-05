@@ -2,7 +2,7 @@
 
 A full-stack tourism package booking system built with **ASP.NET Core** and **vanilla JavaScript**. Travelers can browse packages and submit bookings from the website; admins can review, export, and manage those bookings from a protected dashboard — all backed by a real database instead of browser storage.
 
-![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?logo=dotnet&logoColor=white)
+![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet&logoColor=white)
 ![EF Core](https://img.shields.io/badge/EF%20Core-SQLite-informational)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
@@ -39,7 +39,7 @@ GETIS started as a client-side prototype (bookings saved to `localStorage`, a ha
 
 | Layer      | Technology                                   |
 |------------|-----------------------------------------------|
-| Backend    | ASP.NETCore 10 Web API, C#                    |
+| Backend    | ASP.NET Core 10 Web API, C#                    |
 | Database   | SQLite via Entity Framework Core              |
 | Frontend   | HTML5, CSS3, vanilla JavaScript (`fetch` API) |
 | API Docs   | Swashbuckle (Swagger UI)                      |
