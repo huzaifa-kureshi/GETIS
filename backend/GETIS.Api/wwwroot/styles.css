@@ -1,0 +1,263 @@
+/*!
+  styles.css - GETIS main site styles
+  - Full updated version with modern package card styling
+  - Clean, commented, responsive
+*/
+/* Background slideshow */
+.bg-slideshow { position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; overflow:hidden; }
+.bg-slide { position:absolute; width:100%; height:100%; background-size:cover; background-position:center; opacity:0; transition:opacity 1.5s ease-in-out; }
+.bg-slide.active { opacity:1; }
+.bg-slideshow::before { content:''; position:absolute; width:100%; height:100%; background:rgba(0,0,0,0.4); top:0; left:0; }
+
+/* =====================================================
+   GLOBAL STYLES
+===================================================== */
+:root {
+  --accent-indigo: #4f46e5;
+  --muted: #6b7280;
+  --glass-bg: rgba(255, 255, 255, 0.55);
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin: 0;
+  background: linear-gradient(180deg, #f7fafc 0%, #eef2f7 100%);
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Global resets */
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; }
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+/* === HERO BACKGROUND IMAGE === */
+.hero-bg {
+    /* REMOVED: background-image: url('https://content.skyscnr.com/m/17facff22bc5efda/original/GettyImages-138160482_doc.jpg?resize=1224%3Aauto'); */
+    background-size: cover;
+    background-position: center;
+    /* This setting works well with the image you provided */
+    background-attachment: fixed;
+    /* ADDED: Subtle blue overlay for a cleaner, branded look matching the image */
+    box-shadow: inset 0 0 0 2000px rgba(79, 70, 229, 0.1); 
+    
+    /* Ensure content is positioned correctly relative to the slideshow */
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-title {
+  font-size: 2.25rem;
+  line-height: 1.05;
+  color: white;
+  font-weight: 800;
+  text-shadow: 0 8px 30px rgba(12, 11, 20, 0.45);
+}
+
+.hero-subtitle {
+  color: white;
+  opacity: 0.95;
+  font-weight: 600;
+}
+/*==================================================================*/
+
+/* =====================================================
+   GLASS CARD STYLE
+===================================================== */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/* =====================================================
+   DESTINATION CARDS
+===================================================== */
+.dest-card img {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+/*=============================================================================================*/
+
+
+/*=======================================================================================================*/
+/* ---------------------------------------------------
+   HOVER EFFECTS — Lift + Glow
+------------------------------------------------------ */
+.pkg-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.18);
+}
+
+/* Package specific color glow enhancements */
+.pkg-card:hover::before {
+  filter: brightness(1.3);
+}
+
+/* Adventure (1st) — Indigo/Purple theme */
+#pkgSelection .pkg-card:nth-child(1):hover::before {
+  background: linear-gradient(135deg, #4f46e5, #6366f1, #8b5cf6);
+}
+
+/* Luxury (2nd) — Gold theme */
+#pkgSelection .pkg-card:nth-child(2):hover::before {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
+}
+
+/* Cultural (3rd) — Green theme */
+#pkgSelection .pkg-card:nth-child(3):hover::before {
+  background: linear-gradient(135deg, #10b981, #34d399, #6ee7b7);
+}
+
+/* =====================================================
+   BOOKING FORM TWEAKS
+===================================================== */
+#bookingForm {
+  
+    background: rgba(179, 200, 139, 0.55);
+    backdrop-filter: blur(12px);
+    border-radius: 22px;
+    padding: 28px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+    border: 1.5px solid rgba(84, 17, 17, 0.4);
+    transition: all .35s ease;
+}
+
+/* Hover lift effect */
+#bookingForm:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+/* Input + Select fields */
+#bookingForm input,
+#bookingForm select,
+#bookingForm textarea {
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 2px solid transparent;
+
+    /* Soft inner shadow & depth */
+    box-shadow:
+        inset 0 3px 6px rgba(0, 0, 0, 0.08),
+        0 4px 12px rgba(0, 0, 0, 0.08);
+
+    transition: all .25s ease;
+}
+
+/* Glow focus effect */
+#bookingForm input:focus,
+#bookingForm select:focus,
+#bookingForm textarea:focus {
+    outline: none;
+    background: #ffffff;
+    border-color: rgba(99, 102, 241, 0.75);  /* Indigo glow */
+    box-shadow: 
+        0 0 8px rgba(99, 102, 241, 0.55),
+        0 0 20px rgba(99, 102, 241, 0.35);
+}
+
+/* Labels styling */
+#bookingForm label {
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 6px;
+    display: block;
+}
+
+/* Submit button */
+#bookingForm button[type="submit"] {
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: white;
+    padding: 14px 20px;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    transition: all .3s ease;
+    box-shadow: 0 5px 20px rgba(99, 102, 241, 0.45);
+}
+
+/* Button hover */
+#bookingForm button[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 12px 30px rgba(99, 102, 241, 0.55),
+        0 0 8px rgba(255, 255, 255, 0.4) inset;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+    #bookingForm {
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    #bookingForm input,
+    #bookingForm select {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+/* =====================================================
+   FOOTER
+===================================================== */
+footer {
+  border-top: 1px solid rgba(255,255,255,0.03);
+}
+
+/* =====================================================
+   RESPONSIVE STYLES
+===================================================== */
+
+/* Phones */
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .glass {
+    padding: 18px;
+  }
+
+  .pkg-card {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .pkg-card h4 {
+    font-size: 1.3rem;
+  }
+
+  .pkg-card span {
+    font-size: 1.6rem;
+  }
+}
+
+/* Tablets */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .glass {
+    padding: 22px;
+  }
+}
+
+/* Desktops */
+@media (min-width: 1025px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+}

@@ -1,0 +1,19 @@
+# .NET build output
+bin/
+obj/
+
+# SQLite database (generated at runtime, don't commit real data)
+*.db
+*.db-shm
+*.db-wal
+
+# IDE / editor folders
+.vs/
+.vscode/*
+!.vscode/extensions.json
+*.user
+*.suo
+
+# OS files
+.DS_Store
+Thumbs.db
