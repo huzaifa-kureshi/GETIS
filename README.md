@@ -12,7 +12,7 @@ A full-stack tourism package booking system built with **ASP.NET Core** and **va
 
 GETIS started as a client-side prototype (bookings saved to `localStorage`, a hardcoded admin password in JavaScript). This version replaces that with a proper client-server architecture:
 
-- A **C# Web API** (ASP.NET Core 8 + Entity Framework Core) owns all data and business logic.
+- A **C# Web API** (ASP.NETCore 10 + Entity Framework Core) owns all data and business logic.
 - A **static HTML/CSS/JS frontend** talks to that API exclusively over `fetch()` — no data is stored in the browser beyond a short-lived admin session token.
 - Data is persisted in a **SQLite** database, created and seeded automatically on first run.
 
@@ -43,7 +43,7 @@ GETIS started as a client-side prototype (bookings saved to `localStorage`, a ha
 
 | Layer      | Technology                                   |
 |------------|-----------------------------------------------|
-| Backend    | ASP.NET Core 8 Web API, C#                    |
+| Backend    | ASP.NETCore 10 Web API, C#                    |
 | Database   | SQLite via Entity Framework Core              |
 | Frontend   | HTML5, CSS3, vanilla JavaScript (`fetch` API) |
 | API Docs   | Swashbuckle (Swagger UI)                      |
@@ -93,13 +93,13 @@ Admin routes are protected by a demo-grade `X-Admin-Token` header, issued at log
 
 ### Prerequisites
 
-- [.NET SDK 8.0+](https://dotnet.microsoft.com/download)
+- [.NET SDK 10.0+](https://dotnet.microsoft.com/download)
 - [Visual Studio Code](https://code.visualstudio.com/) with the **C# Dev Kit** extension (recommended)
 
 ### Run locally
 
 ```bash
-git clone https://github.com/<your-username>/<your-repo>.git
+git clone https://github.com/huzaifa-kureshi/GETIS.git
 cd GETIS/backend/GETIS.Api
 dotnet restore
 dotnet run
