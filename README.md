@@ -63,16 +63,35 @@ GETIS/
 ```
 ## 🏗️ Architecture
 
-```mermaid
-flowchart TD
-    A[🌐 Frontend (wwwroot)<br/>index.html<br/>admin.html<br/>script.js]
-    B[🚀 ASP.NET Core Web API<br/>AuthController<br/>PackagesController<br/>BookingsController]
-    C[⚙️ Entity Framework Core]
-    D[(💾 SQLite Database<br/>getis.db)]
-
-    A -->|HTTP Requests (Fetch API)| B
-    B --> C
-    C --> D
+```text
+┌───────────────────────────────┐
+│      Frontend (wwwroot)       │
+│                               │
+│ • index.html                  │
+│ • admin.html                  │
+│ • script.js                   │
+└──────────────┬────────────────┘
+               │
+               │ HTTP Requests (Fetch API)
+               ▼
+┌───────────────────────────────┐
+│     ASP.NET Core Web API      │
+│                               │
+│ • AuthController              │
+│ • PackagesController          │
+│ • BookingsController          │
+└──────────────┬────────────────┘
+               │
+               ▼
+┌───────────────────────────────┐
+│   Entity Framework Core       │
+└──────────────┬────────────────┘
+               │
+               ▼
+┌───────────────────────────────┐
+│     SQLite Database           │
+│       getis.db                │
+└───────────────────────────────┘
 ```
 
 | Endpoint                          | Method | Access | Purpose                              |
