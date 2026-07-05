@@ -61,16 +61,18 @@ GETIS/
 └── docs/
     └── screenshots/                # Screenshots used in this README
 ```
+## 🏗️ Architecture
 
-## Architecture
+```mermaid
+flowchart TD
+    A[🌐 Frontend (wwwroot)<br/>index.html<br/>admin.html<br/>script.js]
+    B[🚀 ASP.NET Core Web API<br/>AuthController<br/>PackagesController<br/>BookingsController]
+    C[⚙️ Entity Framework Core]
+    D[(💾 SQLite Database<br/>getis.db)]
 
-```
- Browser (wwwroot)                 ASP.NET Core Web API
-┌───────────────────┐            ┌───────────────────────┐
-│ index.html         │  fetch()   │ PackagesController     │
-│ admin.html          │ ─────────▶│ BookingsController      │───▶ EF Core ───▶ SQLite (getis.db)
-│ script.js            │           │ AuthController           │
-└───────────────────┘            └───────────────────────┘
+    A -->|HTTP Requests (Fetch API)| B
+    B --> C
+    C --> D
 ```
 
 | Endpoint                          | Method | Access | Purpose                              |
